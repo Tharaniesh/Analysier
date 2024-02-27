@@ -1,0 +1,193 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:mp="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/back">
+
+    <!-- Header Section -->
+    <TextView
+        android:id="@+id/network_analyzer_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Network Analyzer"
+        android:textSize="24sp"
+        android:textColor="@android:color/white"
+        android:background="@color/blue"
+        android:padding="16dp"
+        android:gravity="center"
+        />
+
+    <!-- Logo -->
+    <ImageView
+        android:id="@+id/logo_image_view"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/logo"
+        android:contentDescription="@string/logo_description"
+        android:scaleType="fitCenter"/>
+
+    <!-- Header Layout -->
+    <LinearLayout
+        android:id="@+id/header_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/network_analyzer_text"
+        android:padding="16dp"
+        android:background="@color/white">
+
+        <!-- Title TextView -->
+        <TextView
+            android:id="@+id/title_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nearby Networks"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:layout_gravity="center"/>
+
+        <!-- Search EditText and Button -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Search EditText -->
+            <EditText
+                android:id="@+id/search_edit_text"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="3"
+                android:hint="Search Network"
+                android:padding="10dp"
+                android:textColorHint="@color/lightGray" />
+
+            <!-- Search Button -->
+            <ImageButton
+                android:id="@+id/search_button"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:text="Search"
+                android:src="@drawable/search"
+                android:scaleType="centerCrop"
+                android:textColor="@color/black"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Content Section -->
+    <LinearLayout
+        android:id="@+id/content_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/header_layout"
+        android:padding="16dp">
+
+        <!-- TextView to display nearby network devices -->
+        <TextView
+            android:id="@+id/network_list_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:text="List of Nearby Network Devices"
+            android:paddingBottom="16dp"/>
+
+        <!-- RecyclerView to display nearby networks -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/networks_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:padding="8dp"/>
+
+        <!-- Horizontal LinearLayout for ping and hop count -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="16dp">
+
+            <!-- TextView for ping -->
+            <TextView
+                android:id="@+id/ping"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ping : "
+                android:textSize="20dp" />
+
+            <!-- TextView for displaying ping value -->
+            <TextView
+                android:id="@+id/ping_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:layout_marginStart="8dp" />
+
+            <!-- TextView for hop count -->
+            <TextView
+                android:id="@+id/hop_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hop Count : "
+                android:textSize="20dp"
+                android:layout_marginStart="16dp" />
+
+            <!-- TextView for displaying hop count value -->
+            <TextView
+                android:id="@+id/hop_count_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:layout_marginStart="8dp" />
+
+        </LinearLayout>
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="20dp"/>
+
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/live_chart"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:padding="16dp"
+            xmlns:mp="http://schemas.android.com/apk/res-auto"
+            mp:chart="@{viewModel.chart}" />
+
+    </LinearLayout>
+
+    <!-- Footer Section -->
+    <LinearLayout
+        android:id="@+id/footer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:padding="16dp">
+
+
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/btn_menu"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignLeft="@id/network_analyzer_text"
+        android:layout_alignBottom="@id/network_analyzer_text"
+        android:layout_marginLeft="360dp"
+        android:layout_marginRight="18dp"
+        android:layout_marginBottom="13dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="Menu"
+        android:src="@drawable/menu" />
+
+</RelativeLayout>

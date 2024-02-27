@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Header Section -->
+    <TextView
+        android:id="@+id/header_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blue"
+        android:padding="16dp"
+        android:text="Hop Count"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:gravity="center" />
+
+    <!-- Menu Button -->
+    <ImageButton
+        android:id="@+id/menu_button"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/menu"
+        android:contentDescription="Menu"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp" />
+
+    <!-- Text Box and Button -->
+    <LinearLayout
+        android:id="@+id/input_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/header_text"
+        android:padding="16dp">
+
+        <!-- Text Box -->
+        <EditText
+            android:id="@+id/hop_count_text_box"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Enter the domain id"
+            android:padding="8dp" />
+
+        <!-- Button -->
+        <Button
+            android:id="@+id/hop_count_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="count"
+            android:layout_marginStart="16dp" />
+    </LinearLayout>
+
+    <!-- Blank Area to Display Hop Count Details -->
+    <TextView
+        android:id="@+id/hop_count_details"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:layout_below="@id/input_layout"/>
+
+</RelativeLayout>
