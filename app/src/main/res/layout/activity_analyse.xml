@@ -1,6 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/buttonCapture"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Start Packet Capture" />
+
+    <Button
+        android:id="@+id/buttonInspect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Inspect Packets" />
+
+    <Button
+        android:id="@+id/buttonProtocolAnalysis"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Protocol Analysis" />
+
+    <Button
+        android:id="@+id/buttonTrafficMonitoring"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Traffic Monitoring" />
+
+    <Button
+        android:id="@+id/buttonFilterSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Filter and Search" />
+
+    <Button
+        android:id="@+id/buttonExportSave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Export and Save" />
+
+    <Button
+        android:id="@+id/buttonCustomAnalysis"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Custom Analysis Tools" />
 
 </LinearLayout>
